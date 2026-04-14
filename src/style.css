@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: min(100%, 1080px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.game-panel {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.board {
+  --cell-size: 40px;
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto 16px;
+  width: max-content;
+  overflow-x: hidden;
+  grid-auto-flow: row;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid #94a3b8;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.cell:hover {
+  filter: brightness(1.03);
+}
+
+.cell.revealed {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  cursor: default;
+}
+
+.cell.flagged {
+  background: #fde68a;
+  border-color: #f59e0b;
+}
+
+.cell.mine {
+  background: #dc2626;
+  color: white;
+  border-color: #991b1b;
+}
+
+.cell.red-outline {
+  box-shadow: inset 0 0 0 3px rgba(239, 68, 68, 0.9);
+}
+
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.restart-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.restart-button:hover {
+  background: #1d4ed8;
+}
+
+.status-message {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.decrypt-panel {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.decrypt-panel label {
+  font-weight: 600;
+}
+
+.decrypt-panel input {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.decryption-output {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  max-width: 460px;
+}
